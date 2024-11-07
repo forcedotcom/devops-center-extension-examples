@@ -4,14 +4,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 >
-    <label>PrePromote Warning Validator</label>
+    <label>PrePromote Info Validator</label>
     <protected>true</protected>
     <values>
-        <field>Apex_Class__c</field>
-        <value xsi:type="xsd:string">WarningPrePromoteProvider</value>
+        <field>sf_devops__Apex_Class__c</field>
+        <value xsi:type="xsd:string">InfoPrePromoteProvider</value>
     </values>
     <values>
-        <field>Service_Type__c</field>
+        <field>sf_devops__Service_Type__c</field>
         <value xsi:type="xsd:string">PrePromote</value>
     </values>
 </CustomMetadata>

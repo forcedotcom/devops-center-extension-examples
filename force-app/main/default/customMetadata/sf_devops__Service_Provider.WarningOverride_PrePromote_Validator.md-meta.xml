@@ -7,13 +7,13 @@
     <label>PrePromote Warning Override Validator</label>
     <protected>true</protected>
     <values>
-        <field>Apex_Class__c</field>
+        <field>sf_devops__Apex_Class__c</field>
         <value
       xsi:type="xsd:string"
     >WarningPrePromoteProviderOverrideAction</value>
     </values>
     <values>
-        <field>Service_Type__c</field>
+        <field>sf_devops__Service_Type__c</field>
         <value xsi:type="xsd:string">PrePromote</value>
     </values>
 </CustomMetadata>

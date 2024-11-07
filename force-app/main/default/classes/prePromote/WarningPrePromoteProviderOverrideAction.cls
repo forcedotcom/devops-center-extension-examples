@@ -2,25 +2,25 @@
  * Similar to WarningPrePromoteProvider will show a warning dialog, but will update behavior when clicking 'continue'
  * Will also update 'continue' with another label
  */
-global with sharing class WarningPrePromoteProviderOverrideAction extends PrePromoteProvider {
+global with sharing class WarningPrePromoteProviderOverrideAction extends sf_devops.PrePromoteProvider {
   private final WarningPrePromoteValidatorOverrideAction validator = new WarningPrePromoteValidatorOverrideAction();
 
-  global override PrePromoteValidator getValidator() {
+  global override sf_devops.PrePromoteValidator getValidator() {
     return this.validator;
   }
 
-  global with sharing class WarningPrePromoteValidatorOverrideAction extends PrePromoteValidator {
+  global with sharing class WarningPrePromoteValidatorOverrideAction extends sf_devops.PrePromoteValidator {
     global override String getRunningMessage() {
       return 'Warning Override Validation';
     }
 
-    global override SpiPrePromoteValidationResponse validate(
-      SpiPrePromoteContext context
+    global override sf_devops.SpiPrePromoteValidationResponse validate(
+      sf_devops.SpiPrePromoteContext context
     ) {
       // Will use the context to get target stage name
       Id targetStageId = context.getTargetStageId();
       sf_devops__Pipeline_Stage__c targetStage = [
-        SELECT Id, Name
+        SELECT Id, Name, Is_Available__c
         FROM sf_devops__Pipeline_Stage__c
         WHERE Id = :targetStageId
       ];
@@ -29,12 +29,16 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends PrePro
 
       Stage_Validator__c validator = getValidator(targetStageId);
 
-      if (validator != null && validator.Is_Available__c) {
-        return SpiPrePromoteValidationResponse.pass();
+      if (
+        validator != null &&
+        validator.Is_Available__c &&
+        targetStage.Is_Available__c
+      ) {
+        return sf_devops.SpiPrePromoteValidationResponse.pass();
       }
 
       String name = targetStage.Name;
-      return SpiPrePromoteValidationResponse.warn()
+      return sf_devops.SpiPrePromoteValidationResponse.warn()
         .withCustomContinue('Validate ' + name, 'validating target stage')
         .whatHappened()
         .withTitle('Target Stage Validation Missing')
@@ -45,7 +49,9 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends PrePro
         .build();
     }
 
-    global override void invokeCustomAction(SpiPrePromoteContext context) {
+    global override void invokeCustomAction(
+      sf_devops.SpiPrePromoteContext context
+    ) {
       // This will make the target stage available from promotion
       Id targetStageId = context.getTargetStageId();
       Stage_Validator__c validator = getValidator(targetStageId);
@@ -62,11 +68,15 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends PrePro
       // If we are here it means a validator exists but is not ready to receive a promotion, lets update that.
       validator.Is_Available__c = true;
       update validator;
-      //   context.getUnitOfWork()
-      //     .registerDirty(
-      //       validator,
-      //       new List<SObjectField>{ Stage_Validator__c.Is_Available__c }
-      //     );
+
+      context.getUnitOfWork()
+        .registerDirty(
+          new sf_devops__Pipeline_Stage__c(
+            Id = targetStageId,
+            Is_Available__c = true
+          ),
+          new List<SObjectField>{ sf_devops__Pipeline_Stage__c.Is_Available__c }
+        );
     }
 
     private Stage_Validator__c getValidator(Id stageId) {
