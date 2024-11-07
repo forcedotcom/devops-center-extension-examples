@@ -1,5 +1,6 @@
 /**
- * Warning pre promote provider
+ * Basic implementation of a PrePromoteProvider.
+ * It returns a Warning result with a WhatHappened structure.
  */
 global with sharing class WarningPrePromoteProvider extends sf_devops.PrePromoteProvider {
   private final WarningPrePromoteValidator validator = new WarningPrePromoteValidator();

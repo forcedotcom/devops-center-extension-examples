@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_Available__c</fullName>
     <defaultValue>false</defaultValue>
-    <description
-  >Boolean flag to denote if this stage is available to receive a promotion</description>
-    <externalId>false</externalId>
+    <description>Boolean flag to denote if this stage is available to receive a promotion</description>
     <label>Available to host a promotion</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

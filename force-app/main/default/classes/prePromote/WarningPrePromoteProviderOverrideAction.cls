@@ -1,6 +1,12 @@
 /**
- * Similar to WarningPrePromoteProvider will show a warning dialog, but will update behavior when clicking 'continue'
- * Will also update 'continue' with another label
+ * Verifies if target stage of promotion is enabled to receive one.
+ *
+ * To verify this it uses the new custom field Is_Available__c on sf_devops__Pipeline_Stage__c
+ * This acts as a gate. When the promotion is attempted, this valdiator verifies the checkbox field.
+ * If it is true, it will allow the promotion to continue.
+ * If it is false, it will communicate this to the user and override the 'continue' button to actually
+ * perform the enabling of target stage. Then on next promotion this check should pass.
+ *
  */
 global with sharing class WarningPrePromoteProviderOverrideAction extends sf_devops.PrePromoteProvider {
   private final WarningPrePromoteValidatorOverrideAction validator = new WarningPrePromoteValidatorOverrideAction();
@@ -27,24 +33,18 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends sf_dev
 
       // Check if this stage is available to receive a promotion
 
-      Stage_Validator__c validator = getValidator(targetStageId);
-
-      if (
-        validator != null &&
-        validator.Is_Available__c &&
-        targetStage.Is_Available__c
-      ) {
+      if (targetStage.Is_Available__c) {
         return sf_devops.SpiPrePromoteValidationResponse.pass();
       }
 
       String name = targetStage.Name;
       return sf_devops.SpiPrePromoteValidationResponse.warn()
-        .withCustomContinue('Validate ' + name, 'validating target stage')
+        .withCustomContinue('Enable ' + name, 'enabling target stage')
         .whatHappened()
-        .withTitle('Target Stage Validation Missing')
-        .withDetail('Target Stage validation has not been completed.')
+        .withTitle('Target Stage Is not available for promotion')
+        .withDetail('Target Stage enabling has not been completed.')
         .withSuggestion(
-          'Click "Validate" button to complete stage valdiation and retry promotion. Click close in case you dont want to validate yet.'
+          'Click "Enable" button to complete stage enabling and retry promotion. Click close in case you dont want to make it available to host a promotion yet.'
         )
         .build();
     }
@@ -54,21 +54,8 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends sf_dev
     ) {
       // This will make the target stage available from promotion
       Id targetStageId = context.getTargetStageId();
-      Stage_Validator__c validator = getValidator(targetStageId);
 
-      if (validator == null) {
-        Stage_Validator__c targetValidator = new Stage_Validator__c(
-          Is_Available__c = true,
-          Stage_Id__c = targetStageId
-        );
-        insert targetValidator;
-        return;
-      }
-
-      // If we are here it means a validator exists but is not ready to receive a promotion, lets update that.
-      validator.Is_Available__c = true;
-      update validator;
-
+      // Update target stage is Available to host promotions.
       context.getUnitOfWork()
         .registerDirty(
           new sf_devops__Pipeline_Stage__c(
@@ -77,19 +64,6 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends sf_dev
           ),
           new List<SObjectField>{ sf_devops__Pipeline_Stage__c.Is_Available__c }
         );
-    }
-
-    private Stage_Validator__c getValidator(Id stageId) {
-      List<Stage_Validator__c> validators = [
-        SELECT Id, Is_Available__c
-        FROM Stage_Validator__c
-        WHERE Stage_Id__c = :stageId
-      ];
-      if (validators.isEmpty()) {
-        return null;
-      }
-
-      return validators[0];
     }
   }
 }

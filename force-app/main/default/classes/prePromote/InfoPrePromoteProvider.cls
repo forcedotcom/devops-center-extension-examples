@@ -1,3 +1,7 @@
+/**
+ * Basic implementation of a PrePromoteProvider.
+ * It returns an INFO result with a simple title and message.
+ */
 global with sharing class InfoPrePromoteProvider extends sf_devops.PrePromoteProvider {
   private final InfoPrePromoteValidator validator = new InfoPrePromoteValidator();
 
