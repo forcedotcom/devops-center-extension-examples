@@ -56,14 +56,11 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends sf_dev
       Id targetStageId = context.getTargetStageId();
 
       // Update target stage is Available to host promotions.
-      context.getUnitOfWork()
-        .registerDirty(
-          new sf_devops__Pipeline_Stage__c(
-            Id = targetStageId,
-            Is_Available__c = true
-          ),
-          new List<SObjectField>{ sf_devops__Pipeline_Stage__c.Is_Available__c }
-        );
+
+      update new sf_devops__Pipeline_Stage__c(
+        Id = targetStageId,
+        Is_Available__c = true
+      );
     }
   }
 }
