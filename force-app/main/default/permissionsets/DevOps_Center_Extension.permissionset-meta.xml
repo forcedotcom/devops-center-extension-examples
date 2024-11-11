@@ -18,4 +18,13 @@
         <field>sf_devops__Pipeline_Stage__c.Is_Available__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Test_Status__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
 </PermissionSet>
