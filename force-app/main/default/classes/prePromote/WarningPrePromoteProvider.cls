@@ -20,7 +20,7 @@ global with sharing class WarningPrePromoteProvider extends sf_devops.PrePromote
       return sf_devops.SpiPrePromoteValidationResponse.warn()
         .whatHappened()
         .withTitle('Warning - What Happened Example')
-        .withDetail('Here gows description about the issue')
+        .withDetail('Here goes description about the issue')
         .withSuggestion('Here goes info about what to do')
         .withWarningBanner('This is a warning banner')
         .build();
