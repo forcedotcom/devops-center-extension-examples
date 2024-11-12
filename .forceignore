@@ -16,4 +16,5 @@ package.xml
 **namedCredentials
 **connectedApps
 **permissionSets
+**platformEventSubscriberConfigs
 
