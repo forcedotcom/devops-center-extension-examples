@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>DevOps Center Extensions</label>
     <classAccesses>
         <apexClass>InfoPrePromoteProvider</apexClass>
         <enabled>true</enabled>
@@ -38,6 +37,8 @@
         <field>sf_devops__Work_Item__c.Total_In_Review__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>DevOps Center Extensions</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -47,4 +48,8 @@
         <object>Test_Status__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <tabSettings>
+        <tab>Test_Status__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>
