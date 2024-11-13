@@ -13,7 +13,8 @@ package.xml
 
 **profiles
 **appMenus
+**authProviders
 **namedCredentials
 **connectedApps
-**permissionSets
+**platformEventSubscriberConfigs
 
