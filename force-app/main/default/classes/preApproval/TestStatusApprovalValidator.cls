@@ -14,7 +14,7 @@ global with sharing class TestStatusApprovalValidator extends sf_devops.PreAppro
             return sf_devops.SpiPreApprovalValidationResponse.fail('Failed QA', 'Please complete QA on this work item.  See the <a target="_blank" href="/' + 
             statuses[0].Id + '">QA Record</a>');
         }
-        return sf_devops.SpiPreApprovalValidationResponse.success();
+        return sf_devops.SpiPreApprovalValidationResponse.pass();
     }
 
 }
