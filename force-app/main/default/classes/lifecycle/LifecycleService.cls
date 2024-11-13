@@ -5,6 +5,9 @@
  */
 public with sharing class LifecycleService {
 
+    private static final String IN_PROGRESS_STATE = 'IN_PROGRESS';
+    private static final String IN_REVIEW_STATE = 'IN_REVIEW';
+
     public void handleStageChanges(List<sf_devops__Work_Item_State_Change__e> events) {
         Set<Id> workItemIds = new Set<Id>();
         //First, gather all the IDs so we can load the work items
@@ -23,16 +26,17 @@ public with sharing class LifecycleService {
 
 
     private void process(sf_devops__Work_Item_State_Change__e event, sf_devops__Work_Item__c workItem ) {
+        System.debug('Processing change from ' + event.sf_devops__Previous_State__c + ' to ' + event.sf_devops__New_State__c + ' for ' + workItem.Name);
         if (String.isBlank(event.sf_devops__Previous_State__c )) {
             System.debug('Event for ' + workItem.Name + ' does not have a previous state, ignoring');
             return;
         }
         Boolean updateWi = false;
-        if (event.sf_devops__New_State__c == 'In Progress') {
+        if (event.sf_devops__New_State__c == IN_PROGRESS_STATE) {
             System.debug('Recording In Progress transition for ' + workItem.Name);
             workItem.Begin_In_Progress__c = System.now();
             updateWi = true;
-        } else if (event.sf_devops__New_State__c == 'In Review') {
+        } else if (event.sf_devops__New_State__c == IN_REVIEW_STATE) {
             System.debug('Recording In Review transition for ' + workItem.Name);
             workItem.Begin_In_Review__c = System.now();
             updateWi = true;
@@ -40,7 +44,7 @@ public with sharing class LifecycleService {
             System.debug('Ignoring transition to ' + event.sf_devops__New_State__c + ' for ' + workItem.Name);
         }
 
-        if (event.sf_devops__Previous_State__c == 'In Progress') {
+        if (event.sf_devops__Previous_State__c == IN_PROGRESS_STATE) {
             System.debug('Recording In Progress completed for ' + workItem.Name);
             DateTime start = workItem.Begin_In_Progress__c;
             if (start == null) {
@@ -54,7 +58,7 @@ public with sharing class LifecycleService {
             }
             workItem.Total_In_Progress__c = orig + (System.now().getTime() - start.getTime())/(1000.0*60);
             updateWi = true;
-        } else if (event.sf_devops__Previous_State__c == 'In Review') {
+        } else if (event.sf_devops__Previous_State__c == IN_REVIEW_STATE) {
             System.debug('Recording In Review completed for ' + workItem.Name);
             DateTime start = workItem.Begin_In_Review__c;
             if (start == null) {
