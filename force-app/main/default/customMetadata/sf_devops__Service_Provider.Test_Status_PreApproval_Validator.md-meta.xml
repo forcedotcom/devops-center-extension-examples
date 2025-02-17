@@ -12,6 +12,6 @@
     </values>
     <values>
         <field>sf_devops__Service_Type__c</field>
-        <value xsi:type="xsd:string">PreApproval</value>
+        <value xsi:type="xsd:string">demo-PreApproval</value>
     </values>
 </CustomMetadata>
