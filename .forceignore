@@ -17,4 +17,5 @@ package.xml
 **namedCredentials
 **connectedApps
 **platformEventSubscriberConfigs
+**sf_devops_NamedCredentials.permissionSet
 
