@@ -22,7 +22,7 @@ fi
 set -eo pipefail
 sf org create scratch --definition-file config/project-scratch-def.json --set-default --no-ancestors --no-namespace --alias devops-ext --duration-days $TRIAL_DAYS
 
-sf package install --package $APV --no-prompt --security-type AllUsers --wait 120
+sf package install --package "$APV" --no-prompt --security-type AllUsers --wait 120
 
 sf project deploy start
 
