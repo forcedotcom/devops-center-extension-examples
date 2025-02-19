@@ -29,6 +29,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>sf_devops__Work_Item__c.Post_Promote_Task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>sf_devops__Work_Item__c.Pre_Promote_Task__c</field>
         <readable>true</readable>
     </fieldPermissions>

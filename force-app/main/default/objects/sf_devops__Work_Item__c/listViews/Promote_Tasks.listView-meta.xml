@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>sf_devops__Subject__c</columns>
     <columns>Pre_Promote_Task__c</columns>
+    <columns>Post_Promote_Task__c</columns>
     <filterScope>Everything</filterScope>
     <label>Promote Tasks</label>
 </ListView>
