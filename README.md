@@ -33,6 +33,7 @@ These examples will work in any org that has the DevOps Center installed. If you
 ### By Example
 [Test Status](./docs/examples/TestStatus.md)   
 [Development Time](./docs/examples/DevelopmentTime.md)   
+[Promote Tasks](./docs/examples/PromoteTasks.md)  
 [Pre Promote Info](./docs/examples/PrePromoteInfo.md)   
 [Pre Promote Warning](./docs/examples/PrePromoteWarning.md)   
 [Pre Promote Override](./docs/examples/PrePromoteOverride.md)   
