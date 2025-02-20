@@ -100,7 +100,7 @@ if (String.isNotBlank(target.Required_Tests__c)) {
 
 - [PrePromoteOptionsProvider.cls](../../force-app/main/default/classes/prePromote/PrePromoteOptionsProvider.cls): Implementation of the PrePromote Provider for the options
 
-- [sf_devops\_\_Service_Provider.Options_PrePromote_Validator.md-meta.xml](../../force-app/main/default/customMetadata/sf_devops__Service_Provider.Options_PrePromote_Validator.md-meta.xml): Custom Metadata Type to enable the PrePromoteValidator
+- [sf_devops\_\_Service_Provider.Options_PrePromote_Validator.md-meta.xml](../../force-app/main/default/customMetadata/sf_devops__Service_Provider.Options_PrePromote_Validator.md-meta.xml): Custom Metadata Type to enable the PrePromoteProvider
 
 - [Required_Tests\_\_c.field-meta.xml](../../force-app/main/default/objects/sf_devops__Pipeline_Stage__c/fields/Required_Tests__c.field-meta.xml): Custom field for specific tests on a stage.
 
