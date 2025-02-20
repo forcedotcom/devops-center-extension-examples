@@ -31,10 +31,15 @@ Once a work item enters the pipeline, fewer events are generated, and they only 
 
 ## Merged Change Request
 
+One aspect of a promotion is merging the metadata into the branch of the next pipeline stage, this is done by merging the change request(s) that are part of the promotion.  Also, the DevOps Center supports progromatic development and is monitring the VCS for change requests that are merged outside of the DevOps Center (externally merged).  In either case, when the DevOps Center detects a work item's change request has been merged into the next stage, a [Work_Item_Merged_Change_Request__e](LinkMePlease) event will be published.  One event will be published for each work item that was merged, even if they are part of the same promotion.
+
 ## Open Change Request
+
+After a promotion is completed the DevOps Center may create a change request for the next promotion.  When this occurs the DevOps Center will publish a [Work_Item_Open_Change_Request__e](LinkMePlease) event for each work item that has a change request created.
 
 ## Deployment
 
+The second aspect of a promotion is the deployment of the metadata to the target stage.  Once this is completed the DevOps Center will publish a [Deployment__e](LinkMePlease) event.  This event will contain the work item deployed as well as the deployment ID from the target organization.
 
 # Examples
 
