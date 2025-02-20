@@ -39,7 +39,7 @@ global static sf_devop.SpiPreApprovalValidationResponse fail(
 
 ```
 
-As the names imply, if the context Work Item passes the validation, return the results of calling `pass()`, otherwise return the results of calling `fail()`.
+As the names imply, if the context Work Item passes the validation, return the results of calling `pass()`, otherwise return the results of calling `fail()`. If your validation fails the work item, you may return Rich Text Format in the message body and it will be displayed when the DevOps Center user shows the popover.
 
 ### Custom Metadata
 
