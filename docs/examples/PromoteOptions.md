@@ -1,8 +1,8 @@
 # Defaulting Promote Options
 
-**Use Case**: As a developer, I would like to always deploy all metadata that is in out VCS when I promote into the first stage of the pipeline.  
+**Use Case**: As a developer, I would like to always deploy all metadata that is in our VCS when I promote into the first stage of the pipeline.  
 **Use Case**: As a release manager, I would like a consistant naming convention to our change bundles.  
-**Use Case**: As a release manager, I would like to require all deployments into our production org our check deploys and that all tests are run as part of the deployment.  
+**Use Case**: As a release manager, I would like to require all deployments into our production org are check deploys and that all tests are run as part of the deployment.  
 **Use Case**: As a quality manager, I would like to assign certain tests to be run on certain pipeline stages.
 
 ## Overview
@@ -13,6 +13,10 @@ The PrePromoteProvider interface allows customers to control the default selecti
 - **Test Options**: Which tests options are passed into the metadata deployment payload.
 - **Promotion Type**: Deploy now, or do a check deploy?
 - **Version Name**: Default value for a newly created version.
+
+For each of the options sets a developer can control the default selection and/or if the selection is modifiable.
+
+## Details
 
 In this example we will load the target pipeline stage from the context, and based on the stage custom object correctly configure the SpiDefaultPromoteOptionsBuilder we are provided.
 
