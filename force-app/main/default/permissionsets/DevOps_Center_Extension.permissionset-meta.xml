@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>InfoPrePromoteProvider</apexClass>
@@ -15,6 +15,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>sf_devops__Pipeline_Stage__c.Is_Available__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>sf_devops__Pipeline_Stage__c.Required_Tests__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
