@@ -40,3 +40,4 @@ Once a work item enters the pipeline, fewer events are generated, and they only 
 
 The [Development Time](./examples/DevelopmentTime.md) example uses an Apex trigger to subscribe to the [Work_Item_State_Change__e](LinkMePlease) event.  
 The [Test Status](./exanples/TestStatus.md) example uses platform event triggered flows to subscribe to the [Work_Item_Open_Change_Request__e](LinkMePlease) and [Work_Item_Commit__e](LinkMePlease) events.  
+The [Promote Tasks](./examples/PromoteTasks.md) example uses platform event triggered flows to subscribe to the [Deployment__e](LinkMePlease) event.  

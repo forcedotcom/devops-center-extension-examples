@@ -29,6 +29,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>sf_devops__Work_Item__c.Post_Promote_Task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>sf_devops__Work_Item__c.Pre_Promote_Task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>sf_devops__Work_Item__c.Total_In_Progress__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -50,6 +60,10 @@
     </objectPermissions>
     <tabSettings>
         <tab>Test_Status__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>sf_devops__Work_Item__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>
