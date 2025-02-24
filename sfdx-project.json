@@ -2,14 +2,14 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true    
-      }
-    ],
+      "default": true
+    }
+  ],
   "name": "DevOpsCenterExtensions",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
   "packageAliases": {
-    "DevOps Center@8.2.0": "04t6g000008wQlpAAE"
-}
+    "DevOps Center@9.1": "04t6g000008wSYgAAM"
+  }
 }
