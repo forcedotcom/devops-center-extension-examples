@@ -1,2 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"></CustomObject>
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description
+  >A work item keeps track of things that a builder will work on.</description>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Work Item</label>
+    <nameField>
+        <displayFormat>WI-{000000}</displayFormat>
+        <label>Work Item Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Work Items</pluralLabel>
+    <searchLayouts />
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
