@@ -25,6 +25,8 @@ global override sf_devops.SpiPrePromoteValidationResponse validate(
 
 ```
 
+In this example we are just showing a simple response that allows any RTF content to be displayed to the user. For informational messages you can also use the What Happened results, see [PrePromote Warning](./PrePromoteWarning.md) for an example of how to specify this response type.
+
 ## Relevant Files
 
 - [InfoPrePromoteProvider.cls](../../force-app/main/default/classes/prePromote/InfoPrePromoteProvider.cls): Implementation of the PrePromote Validator
