@@ -16,9 +16,9 @@ _Note_ as there are many example implementations in this repository, all of them
 
 ## Creating a test org
 
-These examples will work in any org that has the DevOps Center installed. If you want to create a demo org to test these extension and not do it in your production org, you can use `./script/unix/create-scratch-org.sh`. This script will use the default dev hub to create a new scratch org, it will install the DevOps Center into the scratch org and then push all of the examples.
+These examples will work in any org that has the DevOps Center installed. If you want to create a demo org to test these extension and not do it in your production org, you can use `./scripts/unix/create-scratch-org.sh`. This script will use the default dev hub to create a new scratch org, it will install the DevOps Center into the scratch org and then push all of the examples.
 
-`./script/unix/create-scratch-org.sh "DevOps Center@9.1"`
+`./scripts/unix/create-scratch-org.sh "DevOps Center@9.1"`
 
 ## Documentation
 
