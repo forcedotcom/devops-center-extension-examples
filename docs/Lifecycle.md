@@ -1,7 +1,7 @@
 # DevOps Center Platform Events
 
 
-The main focus of the DevOps Center is to move metadata from lower environments, through a pipeline and eventually into the production org. These metadata changes are encapusalted in a construct we call the work item. As this is such a crucial aspect of the application, the lifecycle of a work item is where we choose to implement our initial platform events.
+The main focus of DevOps Center is to move metadata from lower environments, through a pipeline and eventually into the production org. These metadata changes are encapusalted in a construct we call the work item. As this is such a crucial aspect of the application, the lifecycle of a work item is where we choose to implement our initial platform events.
 
 These are just standard platform events. For information on how to subscribe to them, see [Platform Events Docs](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).  
 
