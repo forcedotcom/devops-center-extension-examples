@@ -1,12 +1,12 @@
 # Development Time
 
-**Use Case**: As a manager, I would like to track the amount of time Work Items are In Progress and In Review.
+**Use Case**: As a manager, I would like to track the amount of time that work items are In Progress and In Review.
 
 ## Overview
 
-In this example we will use the Lifecycle Platform Events to monitor when a work item changes state and record the amount of time that a work item is In Progress or In Review.
+This example uses the Lifecycle Platform Events to monitor when a work item changes state and record the amount of time that a work item is In Progress or In Review.
 
-We will add 4 custom fields to `Work_Item__c` to accomplish this. For each, In Progress and In Review, we will add a field where we can store when the `Work_Item__c` transitions into the state, and we will add a field that will accumulate all of the time a work item is in the state. These fields are:
+We add 4 custom fields to `Work_Item__c` to accomplish this. For each, In Progress and In Review, we add a field where we can store when the `Work_Item__c` transitions into the state, and a field that accumulates all of the time a work item is in the state. These fields are:
 
 - Begin_In_Progress\_\_c
 - Begin_In_Review\_\_c
@@ -15,9 +15,9 @@ We will add 4 custom fields to `Work_Item__c` to accomplish this. For each, In P
 
 ## Details
 
-In Apex, platform events are subscribed to via an Apex trigger. In this example if is Work_Item_Lifecycle.trigger and it is triggered on the `Work_Item_State_Change__e` event. This does very little with the event except invoke the Lifecycle Service.
+In Apex, platform events are subscribed to via an Apex trigger. In this example, Work_Item_Lifecycle.trigger is triggered on the `Work_Item_State_Change__e` event. This does very little with the event except invoke the Lifecycle Service.
 
-In the Lifecycle service, we first bulk load all of the `Work_Item__c` objects that have a state change, then process each one individually. For each `Work_Item__c`, we will look to see if it is transitioning into our out of one of the states we care about. If it is transitioning into the state, then we update the appropriate `Begin` field. If it is tranitioning out of a state, then we update the appropriate `Total` field.
+In the Lifecycle service, we first bulk load all of the `Work_Item__c` objects that have a state change, then process each one individually. For each `Work_Item__c`, we look to see if it is transitioning in to or out of one of the states we care about. If it is transitioning into the state, then we update the appropriate `Begin` field. If it is tranitioning out of a state, then we update the appropriate `Total` field.
 
 ```
         Boolean updateWi = false;
