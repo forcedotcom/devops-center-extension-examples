@@ -52,11 +52,10 @@ global with sharing class WarningPrePromoteProviderOverrideAction extends sf_dev
     global override void invokeCustomAction(
       sf_devops.SpiPrePromoteContext context
     ) {
-      // This will make the target stage available from promotion
       Id targetStageId = context.getTargetStageId();
 
       // Update target stage is Available to host promotions.
-
+      // This will make the target stage available from promotion
       update new sf_devops__Pipeline_Stage__c(
         Id = targetStageId,
         Is_Available__c = true
