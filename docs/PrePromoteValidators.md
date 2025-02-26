@@ -66,7 +66,7 @@ void invokeCustomAction(sf_devops.SpiPrePromoteContext context)
 
 ### sf_devops.SpiPrePromoteContext
 
-The context is passed into almost all of the methds on the validator and it gives you information about when is being promoted and where it is being promoted too. Here are the properties available on the context.
+The context is passed into almost all of the methds on the validator and it gives you information about what is being promoted and where it is being promoted too. Here are the properties available on the context.
 
 **List<SpiWorkItem> getSelectedWorkItems()**. This returns the list of work items that are selected for promotion. This will be null when a bundle is being promoted. For each Work Item, you will get the ID and a flag to state if the work item was selected, or if it was auto-selected because it was externally merged.
 
