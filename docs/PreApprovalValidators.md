@@ -8,7 +8,7 @@ Now, with the global Pre-Appoval Validator interface, customers can start to add
 
 ## Overview
 
-When a work item is in the In Review state, DevOps Center looks for all Pre-Approval validators installed in the system. It asks all of them, in parrellel, if the given work item is allowed to be Approved. If all of the validators return "yes", then DevOps Center shows the Approval toggle. If any one of the validators returns a "no", then we show it's error message instead of the Approcal toggle.
+When a work item is in the In Review state, DevOps Center looks for all Pre-Approval validators installed in the system. It asks all of them, in parrellel, if the given work item is allowed to be Approved. If all of the validators return "yes", then DevOps Center shows the Approval toggle. If any one of the validators returns a "no", then we show it's error message instead of the Approval toggle.
 
 Internally, DevOps Center still checks if the change request for the work item is mergeable; however, now we do this check as just one more implementation of the Pre-Approval Validator.
 
