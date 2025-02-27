@@ -1,13 +1,19 @@
 {
-  "orgName": "my company",
-  "edition": "Developer",
-  "features": ["EnableSetPasswordInApi"],
+  "orgName": "DevOps Center Examples",
+  "edition": "Enterprise",
+  "features": ["DevOpsCenter","EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true
+    },
+    "devHubSettings": {
+      "enableDevOpsCenterGA": true
     }
   }
 }

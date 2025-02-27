@@ -5,8 +5,11 @@
       "default": true
     }
   ],
-  "name": "devops-center-spi-examples",
+  "name": "DevOpsCenterExtensions",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+  "sourceApiVersion": "62.0",
+  "packageAliases": {
+    "DevOps Center@9.1": "04t6g000008wSYgAAM"
+  }
 }
