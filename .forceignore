@@ -10,3 +10,11 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+**profiles
+**appMenus
+**authProviders
+**namedCredentials
+**connectedApps
+**platformEventSubscriberConfigs
+**sf_devops_NamedCredentials.permissionSet
