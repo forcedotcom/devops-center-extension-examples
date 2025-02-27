@@ -25,7 +25,7 @@ global override sf_devops.SpiPrePromoteValidationResponse validate(
 
 ```
 
-In this example, we are showing a simple response that allows any RTF content to be displayed to the user. For informational messages, you can also use the What Happened results. See [PrePromote Warning](./PrePromoteWarning.md) for an example of how to specify this response type.
+In this example, we are showing a simple response that allows any Rich Text Format content to be displayed to the user. For informational messages, you can also use the What Happened results. See [Pre-Promote Warning](./PrePromoteWarning.md) for an example of how to specify this response type.
 
 ## Relevant Files
 
