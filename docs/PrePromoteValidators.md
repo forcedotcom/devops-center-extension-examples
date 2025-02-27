@@ -225,7 +225,7 @@ You can specify the default version name to display. This field is always modifi
 
 ## See Examples
 
-This repository contains many examples of Pr-Promote Validators.
+This repository contains many examples of Pre-Promote Validators.
 
 [PrePromote Info](./examples/PrePromoteInfo.md)  
 [PrePromote Warning](./examples/PrePromoteWarning.md)  
