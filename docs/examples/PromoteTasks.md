@@ -16,7 +16,7 @@ For the second use case, we create a Flow that is triggered on the `sf_devops__D
 
 ### Pre-Promote Tasks
 
-Please see [PrePromote Validators](../PrePromoteValidators.md) for the complete instructions on how to implement a Pre-Promote Validator.
+Please see [Pre-Promote Validators](../PrePromoteValidators.md) for the complete instructions on how to implement a Pre-Promote Validator.
 
 In this example, we want to also showcase the ability to have a Pre-Promote Validator conditionaly excluded from the pre-promotion process.  This is accomplished by implementing the `include` method on the validator.
 
