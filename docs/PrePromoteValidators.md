@@ -1,6 +1,6 @@
 # Pre-Promote Validators
 
-Pre-Promote Validators run every time a promotions is attempted and serve two purposes. First, they allow for custom business processes to be inserted into the promotion validation. Second, they allow custom business logic to control the options in the promotion dialog.
+Pre-Promote Validators run every time a promotion is attempted and serve two purposes. First, they allow for custom business processes to be inserted into the promotion validation. Second, they allow custom business logic to control the options in the promotion dialog.
 
 In this repository, we have provided some examples on how to create custom ones.
 
