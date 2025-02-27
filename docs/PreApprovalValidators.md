@@ -25,7 +25,7 @@ global abstract sf_devop.SpiPreApprovalValidationResponse validate(
 
 ```
 
-The context that you are provided gives you information about the Work Item that we are asking to be validated. The implementation can be whatever your business processes are. There are a few examples of Pre-Approval in this repository for further help.
+The context that you are provided gives you information about the work item that we are asking to be validated. The implementation can be whatever your business processes are. There are a few examples of Pre-Approval in this repository for further help.
 
 After your validation logic is completed, you return an instance of `SpiPreApprovalValidationResponse`. To create one of them, there are two static factory methods on that class.
 
