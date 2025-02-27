@@ -10,7 +10,7 @@ The Pre-Promotion Validator can be used to return warning messages. These are in
 
 ## Details
 
-You can use any logic you would like to control the content that is shown in the warning dialog. In this example we show the "What Happened" results from the validator. This allows you to give use the standard look and feel of the DevOps Center dialogs.
+You can use any logic you would like to control the content that is shown in the warning dialog. In this example we show the "What Happened" results from the validator. This allows you to use the standard look and feel of the DevOps Center dialogs.
 
 ```
     global override sf_devops.SpiPrePromoteValidationResponse validate(
