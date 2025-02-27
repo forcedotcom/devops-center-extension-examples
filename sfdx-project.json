@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "DevOpsCenterExtensions",
+  "name": "devops-center-spi-examples",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "62.0",
