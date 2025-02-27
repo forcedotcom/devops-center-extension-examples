@@ -27,7 +27,7 @@ You can use any logic you would like to control the content that is shown in the
 
 ```
 
-You can also use the simple result type with warning dialogs. This allows you to place any RTF content in the dialog to present to your users. See [PrePromote Info](./PrePromoteInfo.md) fo an example implementation.
+You can also use the simple result type with warning dialogs. This allows you to place any Rich Text Format content in the dialog to present to your users. See [Pre-Promote Info](./PrePromoteInfo.md) fo an example implementation.
 
 ## Relevant Files
 
